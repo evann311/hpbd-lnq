@@ -639,4 +639,418 @@ body.party-mode {
     .birthday-image {
         max-width: 200px;
     }
+}
+
+/* Expanding Rings Effect */
+.rings-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 6000;
+}
+
+.expanding-ring {
+    position: absolute;
+    border: 3px solid;
+    border-radius: 50%;
+    animation: expandRing 2s ease-out forwards;
+}
+
+@keyframes expandRing {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        width: 600px;
+        height: 600px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Enhanced Fireworks */
+.mega-firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: megaFireworkExplode 2.5s ease-out forwards;
+    box-shadow: 0 0 15px currentColor;
+}
+
+@keyframes megaFireworkExplode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+        box-shadow: 0 0 15px currentColor;
+    }
+    20% {
+        transform: scale(2);
+        opacity: 1;
+        box-shadow: 0 0 25px currentColor;
+    }
+    50% {
+        transform: scale(4);
+        opacity: 0.8;
+        box-shadow: 0 0 35px currentColor;
+    }
+    80% {
+        transform: scale(6);
+        opacity: 0.4;
+        box-shadow: 0 0 45px currentColor;
+    }
+    100% {
+        transform: scale(8);
+        opacity: 0;
+        box-shadow: 0 0 55px currentColor;
+    }
+}
+
+/* Sparkle Effects */
+.sparkle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 7000;
+}
+
+.sparkle {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    animation: sparkleFloat 2s ease-out forwards;
+    text-shadow: 0 0 10px currentColor;
+}
+
+@keyframes sparkleFloat {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1.5) rotate(90deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(0.8) rotate(270deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Ripple Effects */
+.ripple-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5500;
+}
+
+.ripple {
+    position: absolute;
+    border: 2px solid;
+    border-radius: 50%;
+    animation: rippleEffect 1.5s ease-out forwards;
+}
+
+@keyframes rippleEffect {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Star Burst Effects */
+.starburst-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 6500;
+}
+
+.starburst {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    animation: starBurstEffect 1.8s ease-out forwards;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@keyframes starBurstEffect {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(3) rotate(120deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(2) rotate(240deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Color Wave Effects */
+.color-wave-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3000;
+}
+
+.color-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, rgba(255, 107, 107, 0.3) 50%, transparent 70%);
+    animation: colorWaveEffect 3s ease-out forwards;
+}
+
+@keyframes colorWaveEffect {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    80% {
+        transform: scale(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Magic Particles */
+.magic-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 7500;
+}
+
+.magic-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: magicFloat 3s ease-out forwards;
+    box-shadow: 0 0 20px currentColor;
+}
+
+@keyframes magicFloat {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1.5) rotate(90deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1) rotate(180deg);
+        opacity: 0.8;
+    }
+    75% {
+        transform: scale(1.2) rotate(270deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Burst Lines Effect */
+.burst-lines-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 6200;
+}
+
+.burst-line {
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(to bottom, currentColor, transparent);
+    animation: burstLineEffect 1.5s ease-out forwards;
+    transform-origin: bottom center;
+}
+
+@keyframes burstLineEffect {
+    0% {
+        transform: scale(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1, 2) rotate(0deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1, 1.5) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1, 3) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+/* Glow Pulse Effect */
+.glow-pulse-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4500;
+}
+
+.glow-pulse {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 107, 107, 0.4) 30%, transparent 70%);
+    animation: glowPulseEffect 2s ease-out forwards;
+}
+
+@keyframes glowPulseEffect {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+/* Lightning Effect */
+.lightning-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 8500;
+}
+
+.lightning {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, #fff, #ff6b6b, #fff);
+    animation: lightningEffect 0.3s ease-out forwards;
+    box-shadow: 0 0 20px #fff, 0 0 40px #ff6b6b;
+}
+
+@keyframes lightningEffect {
+    0% {
+        opacity: 0;
+        transform: scale(0, 1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0, 1);
+    }
+}
+
+/* Spiral Effect */
+.spiral-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5800;
+}
+
+.spiral-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: spiralEffect 2.5s ease-out forwards;
+}
+
+@keyframes spiralEffect {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(1080deg) translateX(150px);
+        opacity: 0;
+    }
 } 

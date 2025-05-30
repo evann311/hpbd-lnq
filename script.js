@@ -15,6 +15,47 @@ document.addEventListener('DOMContentLoaded', function() {
     const explosionContainer = document.createElement('div');
     explosionContainer.className = 'explosion-container';
     document.body.appendChild(explosionContainer);
+
+    // Create new spectacular effect containers
+    const ringsContainer = document.createElement('div');
+    ringsContainer.className = 'rings-container';
+    document.body.appendChild(ringsContainer);
+
+    const sparkleContainer = document.createElement('div');
+    sparkleContainer.className = 'sparkle-container';
+    document.body.appendChild(sparkleContainer);
+
+    const rippleContainer = document.createElement('div');
+    rippleContainer.className = 'ripple-container';
+    document.body.appendChild(rippleContainer);
+
+    const starburstContainer = document.createElement('div');
+    starburstContainer.className = 'starburst-container';
+    document.body.appendChild(starburstContainer);
+
+    const colorWaveContainer = document.createElement('div');
+    colorWaveContainer.className = 'color-wave-container';
+    document.body.appendChild(colorWaveContainer);
+
+    const magicContainer = document.createElement('div');
+    magicContainer.className = 'magic-container';
+    document.body.appendChild(magicContainer);
+
+    const burstLinesContainer = document.createElement('div');
+    burstLinesContainer.className = 'burst-lines-container';
+    document.body.appendChild(burstLinesContainer);
+
+    const glowPulseContainer = document.createElement('div');
+    glowPulseContainer.className = 'glow-pulse-container';
+    document.body.appendChild(glowPulseContainer);
+
+    const lightningContainer = document.createElement('div');
+    lightningContainer.className = 'lightning-container';
+    document.body.appendChild(lightningContainer);
+
+    const spiralContainer = document.createElement('div');
+    spiralContainer.className = 'spiral-container';
+    document.body.appendChild(spiralContainer);
     
     // Button click event with enhanced effects
     birthdayBtn.addEventListener('click', function() {
@@ -40,17 +81,32 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start background party mode
         document.body.classList.add('party-mode');
         
+        // Create expanding rings immediately
+        createExpandingRings();
+        
+        // Create color waves
+        setTimeout(() => createColorWaves(), 200);
+        
         // Create massive confetti explosion
         createMegaConfetti();
         
-        // Create fireworks display
-        setTimeout(() => createFireworks(), 200);
+        // Create enhanced mega fireworks
+        setTimeout(() => createMegaFireworks(), 400);
+        
+        // Create sparkle effects
+        setTimeout(() => createSparkleEffects(), 600);
         
         // Create heart particles
-        setTimeout(() => createHeartParticles(), 400);
+        setTimeout(() => createHeartParticles(), 800);
+        
+        // Create star burst effects
+        setTimeout(() => createStarBurstEffects(), 1000);
         
         // Create particle explosion
-        setTimeout(() => createParticleExplosion(), 600);
+        setTimeout(() => createParticleExplosion(), 1200);
+        
+        // Create magic particles (reduced)
+        setTimeout(() => createMagicParticles(), 1400);
         
         // Animate balloons
         animateBalloonsParty();
@@ -72,14 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
             mainContent.classList.add('celebration');
         }, 500);
         
-        // Create multiple confetti waves
-        for (let i = 1; i <= 5; i++) {
-            setTimeout(() => createConfetti(), i * 800);
-        }
-        
-        // Create additional fireworks bursts
+        // Create fewer waves of effects
         for (let i = 1; i <= 3; i++) {
-            setTimeout(() => createFireworks(), i * 1200);
+            setTimeout(() => createConfetti(), i * 1200);
+            setTimeout(() => createExpandingRings(), i * 1000);
+            setTimeout(() => createMegaFireworks(), i * 1500);
         }
         
         // Remove clicked class after animation
@@ -120,24 +173,24 @@ document.addEventListener('DOMContentLoaded', function() {
     function createMegaConfetti() {
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3', '#54a0ff'];
         const shapes = ['', 'star', 'triangle'];
-        const confettiCount = 100;
-        
-        for (let i = 0; i < confettiCount; i++) {
-            setTimeout(() => {
-                createConfettiPiece(colors, shapes);
-            }, i * 30);
-        }
-    }
-    
-    function createConfetti() {
-        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
-        const shapes = ['', 'star', 'triangle'];
         const confettiCount = 60;
         
         for (let i = 0; i < confettiCount; i++) {
             setTimeout(() => {
                 createConfettiPiece(colors, shapes);
             }, i * 40);
+        }
+    }
+    
+    function createConfetti() {
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        const shapes = ['', 'star', 'triangle'];
+        const confettiCount = 40;
+        
+        for (let i = 0; i < confettiCount; i++) {
+            setTimeout(() => {
+                createConfettiPiece(colors, shapes);
+            }, i * 50);
         }
     }
     
@@ -223,13 +276,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Heart particles effect
     function createHeartParticles() {
-        const heartCount = 25;
+        const heartCount = 15;
         const hearts = ['💖', '💝', '💕', '💗', '❤️', '💙', '💚', '💛', '💜'];
         
         for (let i = 0; i < heartCount; i++) {
             setTimeout(() => {
                 createSingleHeart(hearts);
-            }, i * 150);
+            }, i * 200);
         }
     }
     
@@ -416,49 +469,87 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create the ultimate celebration experience
         console.log('🎉 MEGA ULTRA CELEBRATION ACTIVATED! 🎉');
         
-        // Multiple screen flashes
+        // Fewer screen flashes
         for (let i = 0; i < 5; i++) {
             setTimeout(() => createScreenFlash(), i * 200);
         }
         
-        // Continuous confetti for 10 seconds
-        for (let i = 0; i < 20; i++) {
-            setTimeout(() => createConfetti(), i * 500);
+        // Reduced expanding rings cascade
+        for (let i = 0; i < 8; i++) {
+            setTimeout(() => createExpandingRings(), i * 600);
         }
         
-        // Continuous fireworks
+        // Reduced color wave tsunami
+        for (let i = 0; i < 6; i++) {
+            setTimeout(() => createColorWaves(), i * 800);
+        }
+        
+        // Reduced confetti storm
         for (let i = 0; i < 15; i++) {
-            setTimeout(() => createFireworks(), i * 700);
+            setTimeout(() => createConfetti(), i * 600);
         }
         
-        // Continuous hearts
+        // Reduced mega fireworks
+        for (let i = 0; i < 12; i++) {
+            setTimeout(() => createMegaFireworks(), i * 700);
+        }
+        
+        // Reduced sparkle galaxy explosion
         for (let i = 0; i < 10; i++) {
+            setTimeout(() => createSparkleEffects(), i * 650);
+        }
+        
+        // Reduced star burst supernova
+        for (let i = 0; i < 6; i++) {
+            setTimeout(() => createStarBurstEffects(), i * 900);
+        }
+        
+        // Reduced magic particle storm
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => createMagicParticles(), i * 700);
+        }
+        
+        // Reduced hearts
+        for (let i = 0; i < 8; i++) {
             setTimeout(() => createHeartParticles(), i * 800);
         }
         
-        // Multiple particle explosions
-        for (let i = 0; i < 8; i++) {
-            setTimeout(() => createParticleExplosion(), i * 600);
+        // Reduced particle explosions
+        for (let i = 0; i < 6; i++) {
+            setTimeout(() => createParticleExplosion(), i * 900);
         }
         
-        // Continuous sparkles
-        for (let i = 0; i < 12; i++) {
-            setTimeout(() => createSpectacularSparkles(), i * 900);
+        // Reduced sparkles
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => createSpectacularSparkles(), i * 800);
         }
         
-        // Shake the entire screen
-        document.body.style.animation = 'shake 0.5s ease-in-out';
+        // Create ultimate screen shake
+        document.body.style.animation = 'ultraShake 2s ease-in-out';
         setTimeout(() => {
             document.body.style.animation = '';
-        }, 500);
+        }, 2000);
         
-        // Change button to ultimate mode
+        // Create rainbow background pulse
+        document.body.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #a55eea, #ff9ff3)';
+        document.body.style.backgroundSize = '600% 600%';
+        document.body.style.animation = 'ultraBackground 3s ease infinite, ultraShake 2s ease-in-out';
+        
+        // Change button to ultimate legendary mode
         setTimeout(() => {
-            birthdayBtn.textContent = '🌟 LEGENDARY! 🌟';
+            birthdayBtn.textContent = '🌟👑 ULTRA LEGENDARY GLORY! 👑🌟';
             birthdayBtn.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #a55eea, #ff9ff3)';
             birthdayBtn.style.backgroundSize = '600% 600%';
-            birthdayBtn.style.animation = 'gradientShift 2s ease infinite';
-        }, 2000);
+            birthdayBtn.style.animation = 'ultimateGradientShift 1.5s ease infinite, buttonPulse 2s ease-in-out infinite';
+            birthdayBtn.style.boxShadow = '0 0 30px rgba(255, 107, 107, 0.6), 0 0 60px rgba(78, 205, 196, 0.4)';
+            birthdayBtn.style.transform = 'scale(1.15)';
+        }, 1500);
+        
+        // Reset background after celebration
+        setTimeout(() => {
+            document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            document.body.style.animation = '';
+        }, 10000);
     }
     
     // Add gradient animation CSS for ultimate button
@@ -470,10 +561,50 @@ document.addEventListener('DOMContentLoaded', function() {
             100% { background-position: 0% 50%; }
         }
         
+        @keyframes ultimateGradientShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 0% 75%; }
+            75% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes ultraBackground {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 0%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
             20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+        
+        @keyframes ultraShake {
+            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+            10% { transform: translateX(-15px) translateY(-10px) rotate(-2deg); }
+            20% { transform: translateX(15px) translateY(10px) rotate(2deg); }
+            30% { transform: translateX(-12px) translateY(15px) rotate(-1deg); }
+            40% { transform: translateX(12px) translateY(-15px) rotate(1deg); }
+            50% { transform: translateX(-8px) translateY(-8px) rotate(-1.5deg); }
+            60% { transform: translateX(8px) translateY(8px) rotate(1.5deg); }
+            70% { transform: translateX(-5px) translateY(12px) rotate(-0.5deg); }
+            80% { transform: translateX(5px) translateY(-12px) rotate(0.5deg); }
+            90% { transform: translateX(-3px) translateY(-3px) rotate(-0.2deg); }
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { 
+                transform: scale(1.2); 
+                box-shadow: 0 0 50px rgba(255, 107, 107, 0.8), 0 0 100px rgba(78, 205, 196, 0.6);
+            }
+            50% { 
+                transform: scale(1.3); 
+                box-shadow: 0 0 80px rgba(255, 107, 107, 1), 0 0 150px rgba(78, 205, 196, 0.8);
+            }
         }
     `;
     document.head.appendChild(gradientStyle);
@@ -491,4 +622,294 @@ document.addEventListener('DOMContentLoaded', function() {
             createSparkle(document.body, ['🌟']);
         }
     });
+
+    // Expanding Rings Effect
+    function createExpandingRings() {
+        const ringCount = 5;
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        
+        for (let i = 0; i < ringCount; i++) {
+            setTimeout(() => {
+                const ring = document.createElement('div');
+                ring.className = 'expanding-ring';
+                ring.style.borderColor = colors[i % colors.length];
+                ring.style.left = Math.random() * window.innerWidth + 'px';
+                ring.style.top = Math.random() * window.innerHeight + 'px';
+                
+                ringsContainer.appendChild(ring);
+                
+                setTimeout(() => {
+                    if (ring.parentNode) {
+                        ring.parentNode.removeChild(ring);
+                    }
+                }, 2000);
+            }, i * 300);
+        }
+    }
+
+    // Enhanced Mega Fireworks
+    function createMegaFireworks() {
+        const fireworkCount = 8;
+        
+        for (let i = 0; i < fireworkCount; i++) {
+            setTimeout(() => {
+                createSingleMegaFirework();
+            }, i * 200);
+        }
+    }
+
+    function createSingleMegaFirework() {
+        const centerX = Math.random() * window.innerWidth;
+        const centerY = Math.random() * (window.innerHeight * 0.6) + (window.innerHeight * 0.2);
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        const particleCount = 12;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const firework = document.createElement('div');
+            firework.className = 'mega-firework';
+            
+            const angle = (i / particleCount) * 2 * Math.PI;
+            const distance = 80 + Math.random() * 120;
+            const endX = centerX + Math.cos(angle) * distance;
+            const endY = centerY + Math.sin(angle) * distance;
+            
+            firework.style.left = centerX + 'px';
+            firework.style.top = centerY + 'px';
+            firework.style.color = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Animate to end position
+            firework.style.transform = `translate(${endX - centerX}px, ${endY - centerY}px)`;
+            
+            fireworksContainer.appendChild(firework);
+            
+            setTimeout(() => {
+                if (firework.parentNode) {
+                    firework.parentNode.removeChild(firework);
+                }
+            }, 2500);
+        }
+    }
+
+    // Sparkle Effects
+    function createSparkleEffects() {
+        const sparkleCount = 20;
+        const sparkleSymbols = ['✨', '⭐', '🌟', '💫', '🎇', '🎆'];
+        const colors = ['#fff', '#ffed4e', '#ff6b6b', '#4ecdc4', '#45b7d1', '#a55eea'];
+        
+        for (let i = 0; i < sparkleCount; i++) {
+            setTimeout(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.innerHTML = sparkleSymbols[Math.floor(Math.random() * sparkleSymbols.length)];
+                sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+                sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                sparkle.style.top = Math.random() * window.innerHeight + 'px';
+                
+                sparkleContainer.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 2000);
+            }, i * 100);
+        }
+    }
+
+    // Ripple Effects
+    function createRippleEffects() {
+        const rippleCount = 6;
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        
+        for (let i = 0; i < rippleCount; i++) {
+            setTimeout(() => {
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                ripple.style.borderColor = colors[i % colors.length];
+                ripple.style.left = Math.random() * window.innerWidth + 'px';
+                ripple.style.top = Math.random() * window.innerHeight + 'px';
+                
+                rippleContainer.appendChild(ripple);
+                
+                setTimeout(() => {
+                    if (ripple.parentNode) {
+                        ripple.parentNode.removeChild(ripple);
+                    }
+                }, 1500);
+            }, i * 250);
+        }
+    }
+
+    // Star Burst Effects
+    function createStarBurstEffects() {
+        const starCount = 10;
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3', '#54a0ff'];
+        
+        for (let i = 0; i < starCount; i++) {
+            setTimeout(() => {
+                const star = document.createElement('div');
+                star.className = 'starburst';
+                star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                star.style.left = Math.random() * window.innerWidth + 'px';
+                star.style.top = Math.random() * window.innerHeight + 'px';
+                
+                starburstContainer.appendChild(star);
+                
+                setTimeout(() => {
+                    if (star.parentNode) {
+                        star.parentNode.removeChild(star);
+                    }
+                }, 1800);
+            }, i * 180);
+        }
+    }
+
+    // Color Wave Effects
+    function createColorWaves() {
+        const waveCount = 4;
+        const gradients = [
+            'radial-gradient(circle, transparent 30%, rgba(255, 107, 107, 0.3) 50%, transparent 70%)',
+            'radial-gradient(circle, transparent 30%, rgba(78, 205, 196, 0.3) 50%, transparent 70%)',
+            'radial-gradient(circle, transparent 30%, rgba(69, 183, 209, 0.3) 50%, transparent 70%)',
+            'radial-gradient(circle, transparent 30%, rgba(249, 202, 36, 0.3) 50%, transparent 70%)'
+        ];
+        
+        for (let i = 0; i < waveCount; i++) {
+            setTimeout(() => {
+                const wave = document.createElement('div');
+                wave.className = 'color-wave';
+                wave.style.background = gradients[i % gradients.length];
+                
+                colorWaveContainer.appendChild(wave);
+                
+                setTimeout(() => {
+                    if (wave.parentNode) {
+                        wave.parentNode.removeChild(wave);
+                    }
+                }, 3000);
+            }, i * 400);
+        }
+    }
+
+    // Magic Particles
+    function createMagicParticles() {
+        const particleCount = 15;
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        
+        for (let i = 0; i < particleCount; i++) {
+            setTimeout(() => {
+                const particle = document.createElement('div');
+                particle.className = 'magic-particle';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = Math.random() * window.innerWidth + 'px';
+                particle.style.top = Math.random() * window.innerHeight + 'px';
+                
+                magicContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 3000);
+            }, i * 150);
+        }
+    }
+
+    // Burst Lines Effect
+    function createBurstLines() {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const lineCount = 20;
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        
+        for (let i = 0; i < lineCount; i++) {
+            const line = document.createElement('div');
+            line.className = 'burst-line';
+            line.style.color = colors[Math.floor(Math.random() * colors.length)];
+            line.style.left = centerX + 'px';
+            line.style.top = centerY + 'px';
+            line.style.transform = `rotate(${(i / lineCount) * 360}deg)`;
+            
+            burstLinesContainer.appendChild(line);
+            
+            setTimeout(() => {
+                if (line.parentNode) {
+                    line.parentNode.removeChild(line);
+                }
+            }, 1500);
+        }
+    }
+
+    // Glow Pulse Effects
+    function createGlowPulseEffects() {
+        const pulseCount = 8;
+        
+        for (let i = 0; i < pulseCount; i++) {
+            setTimeout(() => {
+                const pulse = document.createElement('div');
+                pulse.className = 'glow-pulse';
+                pulse.style.left = Math.random() * window.innerWidth + 'px';
+                pulse.style.top = Math.random() * window.innerHeight + 'px';
+                
+                glowPulseContainer.appendChild(pulse);
+                
+                setTimeout(() => {
+                    if (pulse.parentNode) {
+                        pulse.parentNode.removeChild(pulse);
+                    }
+                }, 2000);
+            }, i * 200);
+        }
+    }
+
+    // Lightning Effects
+    function createLightningEffects() {
+        const lightningCount = 15;
+        
+        for (let i = 0; i < lightningCount; i++) {
+            setTimeout(() => {
+                const lightning = document.createElement('div');
+                lightning.className = 'lightning';
+                lightning.style.left = Math.random() * window.innerWidth + 'px';
+                lightning.style.top = Math.random() * (window.innerHeight * 0.8) + 'px';
+                lightning.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                lightningContainer.appendChild(lightning);
+                
+                setTimeout(() => {
+                    if (lightning.parentNode) {
+                        lightning.parentNode.removeChild(lightning);
+                    }
+                }, 300);
+            }, i * 100);
+        }
+    }
+
+    // Spiral Effects
+    function createSpiralEffects() {
+        const spiralCount = 20;
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        
+        for (let i = 0; i < spiralCount; i++) {
+            setTimeout(() => {
+                const particle = document.createElement('div');
+                particle.className = 'spiral-particle';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = centerX + 'px';
+                particle.style.top = centerY + 'px';
+                particle.style.animationDelay = (i * 50) + 'ms';
+                particle.style.transform = `rotate(${i * 18}deg)`;
+                
+                spiralContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 2500);
+            }, i * 80);
+        }
+    }
 }); 
