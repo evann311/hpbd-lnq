@@ -3,11 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const birthdayImage = document.getElementById('birthdayImage');
     const confettiContainer = document.getElementById('confetti');
     
-    // Create additional effect containers
-    const fireworksContainer = document.createElement('div');
-    fireworksContainer.className = 'fireworks-container';
-    document.body.appendChild(fireworksContainer);
-    
     const heartContainer = document.createElement('div');
     heartContainer.className = 'heart-container';
     document.body.appendChild(heartContainer);
@@ -16,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     explosionContainer.className = 'explosion-container';
     document.body.appendChild(explosionContainer);
 
-    // Create new spectacular effect containers
     const ringsContainer = document.createElement('div');
     ringsContainer.className = 'rings-container';
     document.body.appendChild(ringsContainer);
@@ -57,96 +51,74 @@ document.addEventListener('DOMContentLoaded', function() {
     spiralContainer.className = 'spiral-container';
     document.body.appendChild(spiralContainer);
     
-    // Button click event with enhanced effects
     birthdayBtn.addEventListener('click', function() {
-        // Start the mega celebration sequence
         startMegaCelebration();
     });
     
     function startMegaCelebration() {
-        // Add clicked animation to button
         birthdayBtn.classList.add('clicked');
         
-        // Update button text and effects IMMEDIATELY
         birthdayBtn.textContent = '🎆 GLORY MAN U 🎆';
         birthdayBtn.style.background = 'linear-gradient(45deg, #ff9ff3, #f368e0)';
         
-        // Disable button temporarily
         birthdayBtn.disabled = true;
         birthdayBtn.style.opacity = '0.7';
         
-        // Create screen flash
         createScreenFlash();
         
-        // Start background party mode
         document.body.classList.add('party-mode');
         
-        // Create expanding rings immediately
         createExpandingRings();
         
-        // Create color waves
         setTimeout(() => createColorWaves(), 200);
         
-        // Create massive confetti explosion
         createMegaConfetti();
         
-        // Create enhanced mega fireworks
         setTimeout(() => createMegaFireworks(), 400);
         
-        // Create sparkle effects
         setTimeout(() => createSparkleEffects(), 600);
         
-        // Create heart particles
         setTimeout(() => createHeartParticles(), 800);
         
-        // Create star burst effects
         setTimeout(() => createStarBurstEffects(), 1000);
         
-        // Create particle explosion
         setTimeout(() => createParticleExplosion(), 1200);
         
-        // Create magic particles (reduced)
         setTimeout(() => createMagicParticles(), 1400);
         
-        // Animate balloons
         animateBalloonsParty();
         
-        // Rainbow title effect
         setTimeout(() => {
             const title = document.querySelector('.title');
             title.classList.add('rainbow');
         }, 300);
         
-        // Show birthday image with enhanced animation
         setTimeout(() => {
             showBirthdayImageSpectacular();
         }, 800);
         
-        // Main content celebration animation
+        
         setTimeout(() => {
             const mainContent = document.querySelector('.main-content');
             mainContent.classList.add('celebration');
         }, 500);
         
-        // Create fewer waves of effects
+        
         for (let i = 1; i <= 3; i++) {
             setTimeout(() => createConfetti(), i * 1200);
             setTimeout(() => createExpandingRings(), i * 1000);
             setTimeout(() => createMegaFireworks(), i * 1500);
         }
         
-        // Remove clicked class after animation
         setTimeout(() => {
             birthdayBtn.classList.remove('clicked');
         }, 800);
         
-        // Re-enable button after celebration
         setTimeout(() => {
             birthdayBtn.disabled = false;
             birthdayBtn.style.opacity = '1';
         }, 2000);
         
-        // Clean up effects after celebration
         setTimeout(() => {
             document.body.classList.remove('party-mode');
             const title = document.querySelector('.title');
@@ -156,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 8000);
     }
     
-    // Screen flash effect
     function createScreenFlash() {
         const flash = document.createElement('div');
         flash.className = 'screen-flash';
@@ -169,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    // Enhanced confetti with different shapes
     function createMegaConfetti() {
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3', '#54a0ff'];
         const shapes = ['', 'star', 'triangle'];
@@ -198,11 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const confetti = document.createElement('div');
         confetti.className = 'confetti-piece';
         
-        // Add random shape
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
         if (shape) confetti.classList.add(shape);
         
-        // Random properties
         const color = colors[Math.floor(Math.random() * colors.length)];
         const startPositionX = Math.random() * window.innerWidth;
         const delay = Math.random() * 1000;
@@ -216,14 +184,14 @@ document.addEventListener('DOMContentLoaded', function() {
         confetti.style.width = size + 'px';
         confetti.style.height = size + 'px';
         
-        // Random shapes for non-clipped confetti
+        
         if (!shape && Math.random() > 0.7) {
             confetti.style.borderRadius = '50%';
         }
         
         confettiContainer.appendChild(confetti);
         
-        // Remove confetti piece after animation
+        
         setTimeout(() => {
             if (confetti.parentNode) {
                 confetti.parentNode.removeChild(confetti);
@@ -231,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, duration + delay);
     }
     
-    // Fireworks effect
     function createFireworks() {
         const fireworkCount = 8;
         
@@ -261,7 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
             firework.style.top = centerY + 'px';
             firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             
-            // Animate to end position
             firework.style.transform = `translate(${endX - centerX}px, ${endY - centerY}px)`;
             
             fireworksContainer.appendChild(firework);
@@ -274,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Heart particles effect
     function createHeartParticles() {
         const heartCount = 15;
         const hearts = ['💖', '💝', '💕', '💗', '❤️', '💙', '💚', '💛', '💜'];
@@ -303,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
     
-    // Particle explosion effect
     function createParticleExplosion() {
         const explosionCount = 50;
         const centerX = window.innerWidth / 2;
@@ -323,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
             particle.style.top = centerY + 'px';
             particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             
-            // Animate outward
+            
             setTimeout(() => {
                 particle.style.transform = `translate(${endX - centerX}px, ${endY - centerY}px)`;
             }, 10);
@@ -338,7 +302,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Animate balloons for party mode
     function animateBalloonsParty() {
         const balloons = document.querySelectorAll('.balloon');
         balloons.forEach((balloon, index) => {
@@ -351,12 +314,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Enhanced birthday image reveal
     function showBirthdayImageSpectacular() {
         birthdayImage.classList.remove('hidden');
         setTimeout(() => {
             birthdayImage.classList.add('show');
-            // Add party mode to image
             const image = birthdayImage.querySelector('.birthday-image');
             const message = birthdayImage.querySelector('.birthday-message');
             
@@ -372,7 +333,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
     
-    // Add spectacular sparkle effects
     function createSpectacularSparkles() {
         const sparkleContainer = document.createElement('div');
         sparkleContainer.style.position = 'fixed';
@@ -393,7 +353,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, i * 100);
         }
         
-        // Remove sparkle container after animations
         setTimeout(() => {
             if (sparkleContainer.parentNode) {
                 sparkleContainer.parentNode.removeChild(sparkleContainer);
@@ -420,7 +379,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     }
     
-    // Add sparkle animation CSS
     const sparkleStyle = document.createElement('style');
     sparkleStyle.textContent = `
         @keyframes sparkleAnimation {
@@ -440,12 +398,11 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(sparkleStyle);
     
-    // Add sparkles to the celebration
     birthdayBtn.addEventListener('click', function() {
         setTimeout(createSpectacularSparkles, 1500);
     });
     
-    // Ultimate easter egg: triple click for MEGA celebration
+    
     let clickCount = 0;
     let clickTimer = null;
     
@@ -456,86 +413,76 @@ document.addEventListener('DOMContentLoaded', function() {
                 clickCount = 0;
             }, 600);
         } else if (clickCount === 2) {
-            // Continue counting for potential triple click
+            
         } else if (clickCount === 3) {
             clearTimeout(clickTimer);
             clickCount = 0;
-            // MEGA ULTRA CELEBRATION
             createMegaUltraCelebration();
         }
     });
     
     function createMegaUltraCelebration() {
-        // Create the ultimate celebration experience
         console.log('🎉 MEGA ULTRA CELEBRATION ACTIVATED! 🎉');
         
-        // Fewer screen flashes
         for (let i = 0; i < 5; i++) {
             setTimeout(() => createScreenFlash(), i * 200);
         }
         
-        // Reduced expanding rings cascade
         for (let i = 0; i < 8; i++) {
             setTimeout(() => createExpandingRings(), i * 600);
         }
         
-        // Reduced color wave tsunami
+        
         for (let i = 0; i < 6; i++) {
             setTimeout(() => createColorWaves(), i * 800);
         }
         
-        // Reduced confetti storm
         for (let i = 0; i < 15; i++) {
             setTimeout(() => createConfetti(), i * 600);
         }
         
-        // Reduced mega fireworks
         for (let i = 0; i < 12; i++) {
             setTimeout(() => createMegaFireworks(), i * 700);
         }
         
-        // Reduced sparkle galaxy explosion
+        
         for (let i = 0; i < 10; i++) {
             setTimeout(() => createSparkleEffects(), i * 650);
         }
         
-        // Reduced star burst supernova
         for (let i = 0; i < 6; i++) {
             setTimeout(() => createStarBurstEffects(), i * 900);
         }
         
-        // Reduced magic particle storm
         for (let i = 0; i < 10; i++) {
             setTimeout(() => createMagicParticles(), i * 700);
         }
         
-        // Reduced hearts
         for (let i = 0; i < 8; i++) {
             setTimeout(() => createHeartParticles(), i * 800);
         }
         
-        // Reduced particle explosions
         for (let i = 0; i < 6; i++) {
             setTimeout(() => createParticleExplosion(), i * 900);
         }
         
-        // Reduced sparkles
+        
         for (let i = 0; i < 10; i++) {
             setTimeout(() => createSpectacularSparkles(), i * 800);
         }
         
-        // Create ultimate screen shake
+        
         document.body.style.animation = 'ultraShake 2s ease-in-out';
         setTimeout(() => {
             document.body.style.animation = '';
         }, 2000);
         
-        // Create rainbow background pulse
+        
         document.body.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #a55eea, #ff9ff3)';
         document.body.style.backgroundSize = '600% 600%';
         document.body.style.animation = 'ultraBackground 3s ease infinite, ultraShake 2s ease-in-out';
         
-        // Change button to ultimate legendary mode
+        
         setTimeout(() => {
             birthdayBtn.textContent = '🌟👑 ULTRA LEGENDARY GLORY! 👑🌟';
             birthdayBtn.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #a55eea, #ff9ff3)';
@@ -545,14 +492,12 @@ document.addEventListener('DOMContentLoaded', function() {
             birthdayBtn.style.transform = 'scale(1.15)';
         }, 1500);
         
-        // Reset background after celebration
         setTimeout(() => {
             document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
             document.body.style.animation = '';
         }, 10000);
     }
     
-    // Add gradient animation CSS for ultimate button
     const gradientStyle = document.createElement('style');
     gradientStyle.textContent = `
         @keyframes gradientShift {
@@ -609,21 +554,18 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(gradientStyle);
     
-    // Add some random surprise effects that happen occasionally
     setInterval(() => {
         if (Math.random() < 0.1) { // 10% chance every 3 seconds
             createSparkle(document.body, ['✨']);
         }
     }, 3000);
     
-    // Add hover effects to make everything more interactive
     birthdayBtn.addEventListener('mouseenter', function() {
         if (Math.random() < 0.3) { // 30% chance on hover
             createSparkle(document.body, ['🌟']);
         }
     });
 
-    // Expanding Rings Effect
     function createExpandingRings() {
         const ringCount = 5;
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
@@ -647,7 +589,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Enhanced Mega Fireworks
     function createMegaFireworks() {
         const fireworkCount = 8;
         
@@ -677,7 +618,6 @@ document.addEventListener('DOMContentLoaded', function() {
             firework.style.top = centerY + 'px';
             firework.style.color = colors[Math.floor(Math.random() * colors.length)];
             
-            // Animate to end position
             firework.style.transform = `translate(${endX - centerX}px, ${endY - centerY}px)`;
             
             fireworksContainer.appendChild(firework);
@@ -690,7 +630,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Sparkle Effects
     function createSparkleEffects() {
         const sparkleCount = 20;
         const sparkleSymbols = ['✨', '⭐', '🌟', '💫', '🎇', '🎆'];
@@ -716,7 +655,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Ripple Effects
     function createRippleEffects() {
         const rippleCount = 6;
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
@@ -740,7 +678,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Star Burst Effects
     function createStarBurstEffects() {
         const starCount = 10;
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3', '#54a0ff'];
@@ -764,7 +701,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Color Wave Effects
     function createColorWaves() {
         const waveCount = 4;
         const gradients = [
@@ -791,7 +727,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Magic Particles
     function createMagicParticles() {
         const particleCount = 15;
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
@@ -815,7 +750,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Burst Lines Effect
     function createBurstLines() {
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
@@ -840,7 +774,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Glow Pulse Effects
     function createGlowPulseEffects() {
         const pulseCount = 8;
         
@@ -862,7 +795,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Lightning Effects
     function createLightningEffects() {
         const lightningCount = 15;
         
@@ -885,7 +817,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Spiral Effects
     function createSpiralEffects() {
         const spiralCount = 20;
         const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#a55eea', '#ff9ff3'];
