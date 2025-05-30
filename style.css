@@ -87,11 +87,11 @@ body.party-mode {
 .balloon::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -70px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 100px;
+    height: 70px;
     background: #333;
 }
 
